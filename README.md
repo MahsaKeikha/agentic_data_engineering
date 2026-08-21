@@ -2,32 +2,36 @@
 
 Standalone multi-agent reference system for data contracts, lineage, quality, transformation, orchestration, and reliability review.
 
-## Repository map
+## Architecture
 
 ```text
-.github/workflows/tests.yml
-src/agents.py
-src/state.py
-src/gates.py
-src/orchestrator.py
-src/system.py
-src/run.py
-evals/evaluator.py
-examples/pipeline_case.json
-benchmarks/README.md
-docs/ARCHITECTURE.md
-tests/
-SECURITY.md
-CONTRIBUTING.md
-CITATION.cff
-CHANGELOG.md
-CODE_OF_CONDUCT.md
-LICENSE
-pyproject.toml
+src/
+├── agents/          Data Contract, Lineage, Quality, Transformation, Reliability agents
+├── tools/           deterministic data-inspection and planning helpers
+├── skills/          reusable data-engineering procedures
+├── memory/          pipeline memory
+├── schemas/         contract fields and evidence contracts
+├── prompts/         engineering principles
+├── config/          reference configuration
+├── safety/          publication/handoff policy
+├── observability/   trace summaries
+├── state.py
+├── gates.py
+├── orchestrator.py
+├── system.py
+└── run.py
 ```
 
-## Multi-agent team
-Data Contract Agent, Lineage Agent, Data Quality Agent, Transformation Agent, Reliability Agent, and Data Engineering Orchestrator.
+### Agents
+Data Contract Agent, Lineage Agent, Data Quality Agent, Transformation Agent, Reliability Agent, coordinated by the Data Engineering Orchestrator.
+
+### Skills
+Contract review, lineage analysis, quality evaluation, transformation review, reliability assessment.
+
+### Tools
+Contract record, lineage graph, quality report, transformation plan, reliability plan.
+
+See `docs/AGENTS_TOOLS_SKILLS.md`.
 
 ```bash
 python -m src.run --example
