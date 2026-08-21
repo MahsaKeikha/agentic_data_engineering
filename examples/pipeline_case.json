@@ -1,0 +1,1 @@
+{"schema":"orders_v2","owner":"data platform","sla":"daily","sources":["transactions"],"lineage":["transactions -> orders_clean -> analytics"],"consumers":["finance"],"quality_checks":["not-null","unique"],"quality_failures":[],"transformations":["normalize currency"],"transformation_tests":["passed"],"schedule":"daily","retry":"3 attempts","recovery":"checkpoint replay"}
